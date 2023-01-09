@@ -1,0 +1,36 @@
+<div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              Name:
+            </th>
+            <th>
+              Fork:
+            </th>
+            <th>
+              Stargazers count:
+            </th>
+            <th>
+              Update at:
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let repo of repositories$ | async | sorter:'updated_at'">
+            <td>
+              {{ repo.name }}
+            </td>
+            <td>
+              {{ repo.fork }}
+            </td>
+            <td>
+              {{ repo.stargazers_count }}
+            </td>
+            <td>
+              {{ repo.updated_at }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
